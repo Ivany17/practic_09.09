@@ -1,0 +1,174 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  height: 300vh;
+  padding-top: 40px;
+}
+a{
+  text-decoration: none;
+}
+.page-header{
+  padding: 20px 0;  
+
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  z-index: 5;
+
+  background-color: hotpink;
+  box-shadow: 0px 6px 6px -7px #000000;
+  font-family: sans-serif;
+}
+.list{
+  text-align: center;
+  font-size: 0;
+}
+.list-item+.list-item{
+  margin-left: 1em;
+}
+.list-item{
+  display: inline-block;
+  font-size: 24px;
+}
+.link{
+  display: inline-block;
+  padding: 0.5em;
+  position: relative;
+  background-color: ivory;
+  transition-property: color background-color;
+  transition-duration: 400ms;
+  transition-delay: 100ms;
+  transition-timing-function: linear;
+}
+.link:hover{
+  color: ivory;
+  background-color: greenyellow;
+}
+.link::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0%;
+  height: 3px;
+  top: 48px;
+  left: 0px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,88,1) 55%, rgba(0,212,255,1) 100%);
+
+  transition: width 0.3s linear ;
+}
+
+.link:hover::after {
+  width: 100%;
+  
+}
+
+.link::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0%;
+  height: 3px;
+  top: 0px;
+  right: 0px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(33,6,6,1) 8%, rgba(145,44,13,1) 55%, rgba(108,255,0,1) 100%);
+  transition:  0.3s linear;
+}
+
+.link:hover::before {
+
+  width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inner{
+  height: 50px;
+  width: 10%;
+  background-color: lawngreen;
+  transition: width 1s ease;
+}
+
+.wrapper:hover .inner{
+  width: 100%;
+}
+.linear{
+  transition-timing-function: linear;
+}
+.ease-in{
+  transition-timing-function: ease-in;
+}
+.ease-out{
+  transition-timing-function: ease-out;
+}
+.ease-in-out{
+  transition-timing-function: ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1{
+  background-color: tomato;
+  position: relative;
+  width: fit-content;
+  margin: 2em auto;
+}
+h1::before,
+h1::after{
+  content: url(./../icons/alarm-check.svg);
+  width: 50px;
+  display: inline-block;
+  background-color: gray;
+  margin: 15px;
+  position: absolute;
+  top:-1.2em;
+}
+h1::before{
+  right: 100%;
+}
+p::before{
+  content: open-quote;
+  color:red;
+  font-size: 3em;
+}
+p::after{
+  content: close-quote;
+}
